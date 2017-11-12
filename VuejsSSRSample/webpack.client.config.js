@@ -10,11 +10,11 @@ module.exports = {
         loaders: [
           {
               test: /\.vue$/,
-              loader: 'vue',
+              loader: 'vue-loader',
           },
           {
               test: /\.js$/,
-              loader: 'babel',
+              loader: 'babel-loader',
               include: __dirname,
               exclude: /node_modules/
           },

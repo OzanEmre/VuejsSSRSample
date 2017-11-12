@@ -7,7 +7,6 @@ using VuejsSSRSample.Models;
 
 namespace VuejsSSRSample.Controllers
 {
-    [Route("/Home")]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -21,8 +20,7 @@ namespace VuejsSSRSample.Controllers
 
             return View(initialValues);
         }
-
-        [Route("fetchMessages")]
+        
         public JsonResult FetchMessages(DateTime lastFetchedMessageDate)
         {
             return Json(FakeMessageStore.FakeMessages.OrderByDescending(m => m.Date).SkipWhile(m => m.Date >= lastFetchedMessageDate).Take(1));
